@@ -1,0 +1,34 @@
+!!! 5
+html(lang="en")
+  head
+    title= username + "'s Boardgame Collection"
+    link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css", rel="stylesheet")
+    script(src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js")
+    style(type='text/css').
+      body { 
+      }
+  body
+    - var inch =36 
+    h1 Shelf Layout
+    div#container
+      h3 Could not stack:
+      ul
+        each game, u_i in unstackable
+          li
+            strong= game.game
+            | &mdash;
+            span= game.reason
+
+    each shelf, shelf_index in shelves
+      - var shelf_dim = { width:  Math.ceil(shelf.maxWidth*inch), height: Math.ceil(shelf.maxHeight*inch) }
+      div#container(style="clear:both; border: " +(inch/4)+ "px solid;  height: "+ (shelf_dim.height+inch/2) +"px; width: "+(shelf_dim.width+inch/2)+"px; position: relative;")
+        - var widthBefore = 0;
+        each stack, stack_index in shelf.stacks
+          - var stack_dim = { width: Math.ceil(stack.maxWidth()*inch)}
+          if stack_index > 0
+            - widthBefore = widthBefore + shelf.stacks[stack_index-1].maxWidth() * inch
+          div#stack(style="float:left; width: " + stack_dim.width + "px; position: absolute; bottom: 0; left: "+widthBefore+"px;")
+            each box, box_index in stack.boxes
+              - var box_dim = { width: Math.ceil(box.width * inch)-2, height: Math.max(Math.ceil(box.depth * inch)-2,0) }
+              div#box(style="clear:both; background: url('"+box.image+"') "+box.color+" no-repeat center center; background-size: contain; border: 1px solid; width: " + box_dim.width + "px; height: " + box_dim.height+ "px; overflow:hidden;")
+                span(style="color: "+box.text_color+";")=box.name
