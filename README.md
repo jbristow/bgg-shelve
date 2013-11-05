@@ -26,6 +26,10 @@ Navigate to your shelving solution using your favorite web browser.  Remember to
 
     http://localhost:8888/?username={bgg-username}&height=13.1875&width=13.1875&depth=15.375
     
+Screenshots
+-----------
+<img src="/screenshots/Screen Shot 2013-11-04 at 7.03.50 PM.png" width="200"/> <img src="/screenshots/Screen Shot 2013-11-04 at 7.08.42 PM.png" width="200"/>
+    
 Known Issues
 ------------
 
