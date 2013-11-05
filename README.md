@@ -1,7 +1,7 @@
 bgg-shelve
 ==========
 
-Create a semi-optimized shelf of your [BoardGameGeek](http://boardgamegeek.com/) collection.
+Create a naiively-optimized shelf layout of your [BoardGameGeek](http://boardgamegeek.com/) collection.
 
 Installation
 ------------
