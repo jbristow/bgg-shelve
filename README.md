@@ -24,7 +24,7 @@ Start the server:
   
 Navigate to your shelving solution using your favorite web browser.  Remember to replace "{bgg-username}" with your BoardGameGeek username.  (this example assumes a [standard Expedit shelf](http://www.ikea.com/us/en/catalog/products/30265126/)):
 
-    http://localhost:8888/?username=__bgg-username__&height=13.1875&width=13.1875&depth=15.375
+    http://localhost:8888/?username={bgg-username}&height=13.1875&width=13.1875&depth=15.375
     
 Known Issues
 ------------
