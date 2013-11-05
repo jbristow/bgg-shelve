@@ -17,7 +17,8 @@ html(lang="en")
           li
             strong= game.game
             | &mdash;
-            span= game.reason
+            span(class="label label-" + game.severity)
+              = game.reason
 
     each shelf, shelf_index in shelves
       - var shelf_dim = { width:  Math.ceil(shelf.maxWidth*inch), height: Math.ceil(shelf.maxHeight*inch) }
